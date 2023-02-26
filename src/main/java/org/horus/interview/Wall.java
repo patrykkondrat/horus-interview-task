@@ -9,6 +9,19 @@ public class Wall implements Structure {
 
     @Override
     public Optional<Block> findBlockByColor(String color) {
+        for (Block block : blocks) {
+            if (block.getColor().equals(color)) {
+                return Optional.of(block);
+            }
+            if (block instanceof CompositeBlock) {
+                Optional<Block> innerBlock = ((CompositeBlock) block).getBlocks().stream()
+                        .filter(inner -> inner.getColor().equals(color))
+                        .findFirst();
+                if (innerBlock.isPresent()) {
+                    return innerBlock;
+                }
+            }
+        }
         return Optional.empty();
     }
 
