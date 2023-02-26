@@ -32,3 +32,8 @@ Jeśli tak, to dodajemy ten blok do wynikowej listy.
 
 Dla Blocków zagnieżdżonych (tj. `CompositeBlock`) otwierany jest strumień 
 (stream) do przeglądania bloków wewnątrz bloku zagnieżdżonego.
+Composite Block rozszerza interfejs Block co oznacza, że każdy 
+
+CompositeBlock jest również Blockiem, więc będzie on liczony przy wywołaniu 
+metod findBlockByColor i findBlocksByMaterial. W treści zadania nie jest 
+przedstawione, by metody zwracały tylko podstawowe bloki.
