@@ -7,6 +7,10 @@ import java.util.Optional;
 public class Wall implements Structure {
     private List<Block> blocks;
 
+    public Wall(List<Block> blocks) {
+        this.blocks = blocks;
+    }
+
     @Override
     public Optional<Block> findBlockByColor(String color) {
         for (Block block : blocks) {
